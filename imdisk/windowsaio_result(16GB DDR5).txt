@@ -1,0 +1,100 @@
+Starting FIO benchmarks...
+
+Running Sequential Read Q8T1 Test...
+seq_read_q8: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=windowsaio, iodepth=8
+fio-3.38
+Starting 1 thread
+Jobs: 1 (f=2): [R(1)][100.0%][r=5654MiB/s][r=5654 IOPS][eta 00m:00s]
+seq_read_q8: (groupid=0, jobs=1): err= 0: pid=14560: Sat Nov 30 21:52:51 2024
+  read: IOPS=5613, BW=5614MiB/s (5886MB/s)(54.8GiB/10000msec)
+    slat (usec): min=101, max=4352, avg=177.29, stdev=44.00
+    clat (nsec): min=261, max=5812.8k, avg=713338.44, stdev=387872.41
+     lat (usec): min=104, max=6488, avg=890.63, stdev=398.54
+    clat percentiles (usec):
+     |  1.00th=[  143],  5.00th=[  161], 10.00th=[  188], 20.00th=[  351],
+     | 30.00th=[  445], 40.00th=[  570], 50.00th=[  717], 60.00th=[  816],
+     | 70.00th=[  930], 80.00th=[ 1074], 90.00th=[ 1237], 95.00th=[ 1319],
+     | 99.00th=[ 1582], 99.50th=[ 1729], 99.90th=[ 2311], 99.95th=[ 3097],
+     | 99.99th=[ 5145]
+   bw (  MiB/s): min= 5013, max= 5944, per=99.83%, avg=5604.32, stdev=257.38, samples=20
+   iops        : min= 5013, max= 5944, avg=5604.00, stdev=257.51, samples=20
+  lat (nsec)   : 500=0.05%, 750=0.03%, 1000=0.02%
+  lat (usec)   : 2=0.01%, 4=0.03%, 10=0.03%, 20=0.03%, 50=0.01%
+  lat (usec)   : 100=0.02%, 250=13.70%, 500=19.37%, 750=21.78%, 1000=19.80%
+  lat (msec)   : 2=24.92%, 4=0.15%, 10=0.04%
+  cpu          : usr=0.00%, sys=90.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=0.3%, 2=28.3%, 4=57.1%, 8=14.3%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=87.6%, 8=12.4%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=56137,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+   READ: bw=5614MiB/s (5886MB/s), 4096MiB/s-5614MiB/s (4295MB/s-5886MB/s), io=54.8GiB (58.9GB), run=10000-10000msec
+
+Running Sequential Read Q1T1 Test...
+seq_read_q1: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=windowsaio, iodepth=1
+fio-3.38
+Starting 1 thread
+Jobs: 1 (f=2): [R(1)][100.0%][r=5573MiB/s][r=5572 IOPS][eta 00m:00s]
+seq_read_q1: (groupid=0, jobs=1): err= 0: pid=6788: Sat Nov 30 21:53:01 2024
+  read: IOPS=5407, BW=5408MiB/s (5670MB/s)(52.8GiB/10001msec)
+    slat (usec): min=102, max=2795, avg=173.38, stdev=34.47
+    clat (nsec): min=96, max=2877.6k, avg=10893.77, stdev=30015.67
+     lat (usec): min=108, max=3018, avg=184.28, stdev=48.61
+    clat percentiles (usec):
+     |  1.00th=[    4],  5.00th=[    6], 10.00th=[    6], 20.00th=[    6],
+     | 30.00th=[    7], 40.00th=[    7], 50.00th=[    7], 60.00th=[    7],
+     | 70.00th=[    8], 80.00th=[    8], 90.00th=[   10], 95.00th=[   32],
+     | 99.00th=[  115], 99.50th=[  151], 99.90th=[  310], 99.95th=[  445],
+     | 99.99th=[ 1254]
+   bw (  MiB/s): min= 4698, max= 5642, per=99.88%, avg=5401.44, stdev=239.31, samples=20
+   iops        : min= 4698, max= 5642, avg=5401.15, stdev=239.43, samples=20
+  lat (nsec)   : 100=0.01%, 250=0.24%, 500=0.19%, 750=0.02%, 1000=0.01%
+  lat (usec)   : 2=0.04%, 4=2.69%, 10=88.68%, 20=2.66%, 50=1.93%
+  lat (usec)   : 100=2.23%, 250=1.13%, 500=0.15%, 750=0.02%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%
+  cpu          : usr=0.00%, sys=90.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=54083,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=5408MiB/s (5670MB/s), 4096MiB/s-5408MiB/s (4295MB/s-5670MB/s), io=52.8GiB (56.7GB), run=10001-10001msec
+
+Running Random 4K Q1T1 Test...
+rand_read_4k_q1: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=windowsaio, iodepth=1
+fio-3.38
+Starting 1 thread
+Jobs: 1 (f=2): [r(1)][100.0%][r=288MiB/s][r=73.7k IOPS][eta 00m:00s]
+rand_read_4k_q1: (groupid=0, jobs=1): err= 0: pid=14580: Sat Nov 30 21:53:12 2024
+  read: IOPS=77.2k, BW=302MiB/s (316MB/s)(3018MiB/10001msec)
+    slat (usec): min=2, max=864, avg= 5.71, stdev= 6.33
+    clat (nsec): min=34, max=5347.6k, avg=6844.21, stdev=12085.88
+     lat (usec): min=3, max=5379, avg=12.56, stdev=13.91
+    clat percentiles (nsec):
+     |  1.00th=[  1976],  5.00th=[  2096], 10.00th=[  3440], 20.00th=[  6048],
+     | 30.00th=[  6176], 40.00th=[  6304], 50.00th=[  6432], 60.00th=[  6752],
+     | 70.00th=[  7008], 80.00th=[  7264], 90.00th=[  7584], 95.00th=[  8032],
+     | 99.00th=[ 11968], 99.50th=[ 40192], 99.90th=[134144], 99.95th=[236544],
+     | 99.99th=[329728]
+   bw (  KiB/s): min=271992, max=350528, per=99.88%, avg=308623.85, stdev=28185.63, samples=20
+   iops        : min=67998, max=87632, avg=77155.80, stdev=7046.52, samples=20
+  lat (nsec)   : 50=0.24%, 100=0.03%, 250=0.03%, 500=0.02%, 750=0.01%
+  lat (nsec)   : 1000=0.01%
+  lat (usec)   : 2=1.44%, 4=8.48%, 10=88.44%, 20=0.60%, 50=0.31%
+  lat (usec)   : 100=0.24%, 250=0.11%, 500=0.04%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=0.00%, sys=40.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=772583,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=302MiB/s (316MB/s), 302MiB/s-302MiB/s (316MB/s-316MB/s), io=3018MiB (3164MB), run=10001-10001msec
+
+All tests completed!

@@ -1,0 +1,96 @@
+PS C:\Users\d16\git\ramdisk\imdisk> .\run_benchmark_mmap.ps1
+Creating test file at R:\test\fio_test
+Error 80: The file exists.
+Starting FIO benchmarks...
+
+Running Sequential Read Q8T1 Test...
+seq_read_q8: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=mmap, iodepth=8
+fio-3.38
+Starting 1 thread
+note: both iodepth >= 1 and synchronous I/O engine are selected, queue depth will be capped at 1
+Jobs: 1 (f=2): [R(1)][100.0%][r=4180MiB/s][r=4180 IOPS][eta 00m:00s]
+seq_read_q8: (groupid=0, jobs=1): err= 0: pid=9720: Sat Nov 30 21:51:55 2024
+  read: IOPS=4061, BW=4062MiB/s (4259MB/s)(39.7GiB/10000msec)
+    clat (usec): min=206, max=2540, avg=245.76, stdev=54.23
+     lat (usec): min=206, max=2540, avg=245.80, stdev=54.24
+    clat percentiles (usec):
+     |  1.00th=[  210],  5.00th=[  212], 10.00th=[  215], 20.00th=[  221],
+     | 30.00th=[  229], 40.00th=[  235], 50.00th=[  239], 60.00th=[  241],
+     | 70.00th=[  245], 80.00th=[  251], 90.00th=[  277], 95.00th=[  306],
+     | 99.00th=[  465], 99.50th=[  701], 99.90th=[  791], 99.95th=[  865],
+     | 99.99th=[ 1045]
+   bw (  MiB/s): min= 3192, max= 4341, per=99.91%, avg=4058.03, stdev=266.52, samples=19
+   iops        : min= 3192, max= 4341, avg=4057.84, stdev=266.43, samples=19
+  lat (usec)   : 250=79.15%, 500=19.95%, 750=0.66%, 1000=0.21%
+  lat (msec)   : 2=0.02%, 4=0.01%
+  cpu          : usr=30.00%, sys=50.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=40618,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+   READ: bw=4062MiB/s (4259MB/s), 4062MiB/s-4062MiB/s (4259MB/s-4259MB/s), io=39.7GiB (42.6GB), run=10000-10000msec
+
+Running Sequential Read Q1T1 Test...
+seq_read_q1: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=mmap, iodepth=1
+fio-3.38
+Starting 1 thread
+Jobs: 1 (f=2): [R(1)][100.0%][r=4119MiB/s][r=4119 IOPS][eta 00m:00s]
+seq_read_q1: (groupid=0, jobs=1): err= 0: pid=2948: Sat Nov 30 21:52:07 2024
+  read: IOPS=4120, BW=4121MiB/s (4321MB/s)(40.2GiB/10000msec)
+    clat (usec): min=206, max=3918, avg=242.27, stdev=44.60
+     lat (usec): min=206, max=3918, avg=242.30, stdev=44.61
+    clat percentiles (usec):
+     |  1.00th=[  210],  5.00th=[  215], 10.00th=[  219], 20.00th=[  225],
+     | 30.00th=[  229], 40.00th=[  235], 50.00th=[  239], 60.00th=[  243],
+     | 70.00th=[  247], 80.00th=[  249], 90.00th=[  265], 95.00th=[  281],
+     | 99.00th=[  351], 99.50th=[  429], 99.90th=[  627], 99.95th=[  807],
+     | 99.99th=[ 1221]
+   bw (  MiB/s): min= 3888, max= 4206, per=100.00%, avg=4127.81, stdev=93.03, samples=19
+   iops        : min= 3888, max= 4206, avg=4127.47, stdev=93.09, samples=19
+  lat (usec)   : 250=80.53%, 500=19.17%, 750=0.23%, 1000=0.04%
+  lat (msec)   : 2=0.01%, 4=0.01%
+  cpu          : usr=30.00%, sys=50.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=41207,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=4121MiB/s (4321MB/s), 4096MiB/s-4121MiB/s (4295MB/s-4321MB/s), io=40.2GiB (43.2GB), run=10000-10000msec
+
+Running Random 4K Q1T1 Test...
+rand_read_4k_q1: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=mmap, iodepth=1
+fio-3.38
+Starting 1 thread
+Jobs: 1 (f=2): [r(1)][100.0%][r=7815MiB/s][r=2001k IOPS][eta 00m:00s]
+rand_read_4k_q1: (groupid=0, jobs=1): err= 0: pid=1840: Sat Nov 30 21:52:19 2024
+  read: IOPS=1826k, BW=7131MiB/s (7478MB/s)(69.6GiB/10000msec)
+    clat (nsec): min=70, max=4661.4k, avg=409.14, stdev=2142.56
+     lat (nsec): min=87, max=4661.5k, avg=428.69, stdev=2150.57
+    clat percentiles (nsec):
+     |  1.00th=[  262],  5.00th=[  290], 10.00th=[  298], 20.00th=[  306],
+     | 30.00th=[  314], 40.00th=[  330], 50.00th=[  350], 60.00th=[  382],
+     | 70.00th=[  414], 80.00th=[  446], 90.00th=[  516], 95.00th=[  572],
+     | 99.00th=[ 1384], 99.50th=[ 1544], 99.90th=[ 4512], 99.95th=[ 6240],
+     | 99.99th=[21632]
+   bw (  MiB/s): min= 2937, max= 8044, per=99.81%, avg=7117.71, stdev=1201.96, samples=19
+   iops        : min=752026, max=2059292, avg=1822133.47, stdev=307702.11, samples=19
+  lat (nsec)   : 100=0.01%, 250=0.73%, 500=87.73%, 750=9.68%, 1000=0.24%
+  lat (usec)   : 2=1.47%, 4=0.01%, 10=0.09%, 20=0.02%, 50=0.01%
+  lat (usec)   : 100=0.01%, 250=0.01%, 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 10=0.01%
+  cpu          : usr=90.00%, sys=0.00%, ctx=0, majf=0, minf=0
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=18256545,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=7131MiB/s (7478MB/s), 4096MiB/s-7131MiB/s (4295MB/s-7478MB/s), io=69.6GiB (74.8GB), run=10000-10000msec
+
+All tests completed!
