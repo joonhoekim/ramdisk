@@ -1,40 +1,95 @@
-RAM Disk Benchmark Results (M1 Max 64GB)
-=========================
-Thu Nov 28 22:58:07 KST 2024
+docker run --rm \
+  --mount type=tmpfs,destination=/mnt/tmpfs \
+  fio-tmpfs-test
+Running Sequential Read Q8T1 Test...
+seq_read_q8: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=8
+fio-3.28
+Starting 1 process
+seq_read_q8: Laying out IO file (1 file / 1024MiB)
 
-exFAT - Cluster size: 4096 bytes
-1073741824 bytes transferred in 0.307262 secs (3494548053 bytes/sec)
-1073741824 bytes transferred in 0.189552 secs (5664629358 bytes/sec)
-1073741824 bytes transferred in 0.589807 secs (1820496915 bytes/sec)
-1073741824 bytes transferred in 2.555832 secs (420114399 bytes/sec)
+seq_read_q8: (groupid=0, jobs=1): err= 0: pid=10: Sat Nov 30 11:11:29 2024
+  read: IOPS=7831, BW=7831MiB/s (8212MB/s)(76.5GiB/10001msec)
+    slat (usec): min=51, max=2071, avg=127.05, stdev=16.07
+    clat (nsec): min=1083, max=4247.6k, avg=893909.77, stdev=77466.46
+     lat (usec): min=127, max=4394, avg=1021.04, stdev=86.83
+    clat percentiles (usec):
+     |  1.00th=[  848],  5.00th=[  857], 10.00th=[  865], 20.00th=[  865],
+     | 30.00th=[  873], 40.00th=[  881], 50.00th=[  881], 60.00th=[  889],
+     | 70.00th=[  889], 80.00th=[  898], 90.00th=[  914], 95.00th=[  963],
+     | 99.00th=[ 1237], 99.50th=[ 1369], 99.90th=[ 1696], 99.95th=[ 2147],
+     | 99.99th=[ 3097]
+   bw (  MiB/s): min= 6807, max= 8001, per=100.00%, avg=7837.14, stdev=265.42, samples=19
+   iops        : min= 6807, max= 8001, avg=7836.63, stdev=265.49, samples=19
+  lat (usec)   : 2=0.01%, 250=0.01%, 500=0.01%, 750=0.01%, 1000=96.91%
+  lat (msec)   : 2=3.01%, 4=0.06%, 10=0.01%
+  cpu          : usr=0.54%, sys=99.44%, ctx=57, majf=0, minf=26
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=100.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=78319,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
 
-exFAT - Cluster size: 8192 bytes
-1073741824 bytes transferred in 0.310758 secs (3455234697 bytes/sec)
-1073741824 bytes transferred in 0.170649 secs (6292107331 bytes/sec)
-1073741824 bytes transferred in 0.598536 secs (1793946937 bytes/sec)
-1073741824 bytes transferred in 2.619841 secs (409849996 bytes/sec)
+Run status group 0 (all jobs):
+   READ: bw=7831MiB/s (8212MB/s), 7831MiB/s-7831MiB/s (8212MB/s-8212MB/s), io=76.5GiB (82.1GB), run=10001-10001msec
+Running Sequential Read Q1T1 Test...
+seq_read_q1: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+seq_read_q1: Laying out IO file (1 file / 1024MiB)
 
-exFAT - Cluster size: 16384 bytes
-1073741824 bytes transferred in 0.276072 secs (3889354313 bytes/sec)
-1073741824 bytes transferred in 0.170034 secs (6314865403 bytes/sec)
-1073741824 bytes transferred in 0.595097 secs (1804313959 bytes/sec)
-1073741824 bytes transferred in 2.560176 secs (419401566 bytes/sec)
+seq_read_q1: (groupid=0, jobs=1): err= 0: pid=13: Sat Nov 30 11:11:39 2024
+  read: IOPS=24.9k, BW=24.3GiB/s (26.1GB/s)(243GiB/10001msec)
+    slat (usec): min=35, max=8522, avg=39.59, stdev=37.11
+    clat (nsec): min=208, max=202084, avg=312.21, stdev=666.52
+     lat (usec): min=35, max=8529, avg=39.98, stdev=37.29
+    clat percentiles (nsec):
+     |  1.00th=[  251],  5.00th=[  251], 10.00th=[  251], 20.00th=[  251],
+     | 30.00th=[  290], 40.00th=[  290], 50.00th=[  294], 60.00th=[  294],
+     | 70.00th=[  294], 80.00th=[  294], 90.00th=[  294], 95.00th=[  334],
+     | 99.00th=[  628], 99.50th=[ 1576], 99.90th=[ 4192], 99.95th=[11200],
+     | 99.99th=[24448]
+   bw (  MiB/s): min=19714, max=26465, per=100.00%, avg=24906.42, stdev=1742.39, samples=19
+   iops        : min=19714, max=26465, avg=24906.05, stdev=1742.34, samples=19
+  lat (nsec)   : 250=0.05%, 500=98.38%, 750=0.73%, 1000=0.23%
+  lat (usec)   : 2=0.17%, 4=0.33%, 10=0.07%, 20=0.04%, 50=0.01%
+  lat (usec)   : 100=0.01%, 250=0.01%
+  cpu          : usr=1.43%, sys=98.54%, ctx=59, majf=0, minf=280
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=248819,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
 
-exFAT - Cluster size: 32768 bytes
-1073741824 bytes transferred in 0.282900 secs (3795481881 bytes/sec)
-1073741824 bytes transferred in 0.178526 secs (6014484299 bytes/sec)
-1073741824 bytes transferred in 0.594576 secs (1805894997 bytes/sec)
-1073741824 bytes transferred in 2.564226 secs (418739153 bytes/sec)
+Run status group 0 (all jobs):
+   READ: bw=24.3GiB/s (26.1GB/s), 24.3GiB/s-24.3GiB/s (26.1GB/s-26.1GB/s), io=243GiB (261GB), run=10001-10001msec
+Running Random 4K Q1T1 Test...
+rand_read_4k_q1: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+rand_read_4k_q1: Laying out IO file (1 file / 1024MiB)
 
-exFAT - Cluster size: 65536 bytes
-1073741824 bytes transferred in 0.310957 secs (3453023486 bytes/sec)
-1073741824 bytes transferred in 0.167265 secs (6419405279 bytes/sec)
-1073741824 bytes transferred in 0.596927 secs (1798782471 bytes/sec)
-1073741824 bytes transferred in 2.580305 secs (416129808 bytes/sec)
+rand_read_4k_q1: (groupid=0, jobs=1): err= 0: pid=16: Sat Nov 30 11:11:50 2024
+  read: IOPS=647k, BW=2527MiB/s (2649MB/s)(24.7GiB/10001msec)
+    slat (nsec): min=333, max=1047.4k, avg=1076.94, stdev=876.76
+    clat (nsec): min=125, max=526167, avg=243.97, stdev=290.10
+     lat (nsec): min=625, max=1574.2k, avg=1379.96, stdev=1041.56
+    clat percentiles (nsec):
+     |  1.00th=[  209],  5.00th=[  209], 10.00th=[  209], 20.00th=[  209],
+     | 30.00th=[  251], 40.00th=[  251], 50.00th=[  251], 60.00th=[  251],
+     | 70.00th=[  251], 80.00th=[  251], 90.00th=[  251], 95.00th=[  251],
+     | 99.00th=[  294], 99.50th=[  502], 99.90th=[  588], 99.95th=[  796],
+     | 99.99th=[ 9536]
+   bw (  MiB/s): min= 1601, max= 2669, per=100.00%, avg=2532.19, stdev=240.24, samples=19
+   iops        : min=410045, max=683335, avg=648240.16, stdev=61500.99, samples=19
+  lat (nsec)   : 250=27.04%, 500=72.46%, 750=0.44%, 1000=0.02%
+  lat (usec)   : 2=0.01%, 4=0.01%, 10=0.02%, 20=0.01%, 50=0.01%
+  lat (usec)   : 100=0.01%, 250=0.01%, 750=0.01%
+  cpu          : usr=28.32%, sys=71.66%, ctx=54, majf=0, minf=22
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=6468608,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
 
-APFS Test
-1073741824 bytes transferred in 0.167155 secs (6423629709 bytes/sec)
-1073741824 bytes transferred in 0.158814 secs (6761002330 bytes/sec)
-1073741824 bytes transferred in 1.283727 secs (836425365 bytes/sec)
-1073741824 bytes transferred in 2.922017 secs (367465974 bytes/sec)
-
+Run status group 0 (all jobs):
+   READ: bw=2527MiB/s (2649MB/s), 2527MiB/s-2527MiB/s (2649MB/s-2649MB/s), io=24.7GiB (26.5GB), run=10001-10001msec

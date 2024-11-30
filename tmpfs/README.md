@@ -1,12 +1,18 @@
-# Docker에서 tmpfs를 사용해 FIO 벤치마크를 실행하기
+# Running FIO Benchmark with tmpfs in Docker
 
-1. 이미지 빌드:
+This guide explains how to run FIO (Flexible I/O Tester) benchmarks using tmpfs in a Docker container for memory performance testing.
+
+## Build and Run Instructions
+
+### 1. Build the Docker Image:
 
 ```bash
 docker build -t fio-tmpfs-test .
 ```
 
-2. tmpfs를 마운트하여 컨테이너 실행:
+### 2. Run Container with tmpfs Mount:
+
+#### For Linux and MacOS:
 
 ```bash
 docker run --rm \
@@ -14,20 +20,69 @@ docker run --rm \
   fio-tmpfs-test
 ```
 
-## Description
+#### For Windows (cmd):
 
-1. Ubuntu 22.04 기반으로 최신 안정 버전의 FIO를 사용
-2. tmpfs를 /mnt/tmpfs에 마운트
-3. 세 가지 주요 테스트 실행:
-   - 순차 읽기 (Q8T1)
-   - 순차 읽기 (Q1T1)
-   - 랜덤 4K 읽기 (Q1T1)
-4. libaio 엔진 사용으로 Linux 네이티브 성능 측정
-5. direct=1 설정으로 OS 캐시 우회
+```cmd
+docker run --rm -it --entrypoint=/bin/bash fio-tmpfs-test -c "/run_benchmark.sh"
+```
 
-## Options
+## Technical Details
 
-- 파일 크기 (--size)
-- 실행 시간 (--runtime)
-- 블록 크기 (--bs)
-- Queue depth (--iodepth)
+### Base Configuration
+
+- Base Image: Ubuntu 22.04 LTS
+- FIO Version: Latest stable release
+- Mount Point: `/mnt/tmpfs` for tmpfs filesystem
+- I/O Engine: Linux native asynchronous I/O (libaio)
+- Direct I/O: Enabled (direct=1) to bypass OS cache
+
+### Benchmark Tests
+
+The benchmark suite runs three distinct tests to evaluate different aspects of memory performance:
+
+1. Sequential Read (Q8T1)
+
+   - Tests sequential read performance with queue depth 8
+   - Measures maximum throughput capability
+   - Simulates heavy sequential workloads
+
+2. Sequential Read (Q1T1)
+
+   - Tests sequential read performance with queue depth 1
+   - Evaluates single-threaded sequential performance
+   - Reflects typical application behavior
+
+3. Random 4K Read (Q1T1)
+   - Tests random read performance with 4KB blocks
+   - Measures IOPS (Input/Output Operations Per Second)
+   - Simulates database-like workloads
+
+### Configurable Parameters
+
+You can customize the benchmark by adjusting these parameters:
+
+- `--size`: Test file size
+
+  - Affects the amount of memory used
+  - Should be set according to available system memory
+
+- `--runtime`: Test duration
+
+  - Controls how long each test runs
+  - Longer runtime provides more stable results
+
+- `--bs`: Block size
+
+  - Defines the size of each I/O operation
+  - Affects throughput and IOPS measurements
+
+- `--iodepth`: Queue depth
+  - Controls concurrent I/O operations
+  - Higher values test maximum throughput capability
+
+## Notes
+
+- The test uses tmpfs to ensure pure memory performance testing
+- Direct I/O bypass eliminates filesystem cache effects
+- Results reflect raw memory and CPU performance
+- Windows users need to use WSL2 for Docker operation

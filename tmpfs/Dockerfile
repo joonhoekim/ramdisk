@@ -11,6 +11,7 @@ RUN mkdir /mnt/tmpfs
 
 # Copy benchmark script
 COPY run_benchmark.sh /
+RUN sed -i 's/\r$//' run_benchmark.sh
 RUN chmod +x /run_benchmark.sh
 
 ENTRYPOINT ["/run_benchmark.sh"]

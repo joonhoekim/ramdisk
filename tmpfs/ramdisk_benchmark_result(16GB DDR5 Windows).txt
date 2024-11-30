@@ -1,0 +1,93 @@
+docker run --rm -it --entrypoint=/bin/bash fio-tmpfs-test -c "/run_benchmark.sh"
+Running Sequential Read Q8T1 Test...
+seq_read_q8: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=8
+fio-3.28
+Starting 1 process
+seq_read_q8: Laying out IO file (1 file / 1024MiB)
+Jobs: 1 (f=1): [R(1)][100.0%][r=3219MiB/s][r=3219 IOPS][eta 00m:00s]
+seq_read_q8: (groupid=0, jobs=1): err= 0: pid=30: Sat Nov 30 12:26:08 2024
+  read: IOPS=3216, BW=3216MiB/s (3372MB/s)(31.4GiB/10003msec)
+    slat (usec): min=5, max=809, avg=15.75, stdev=11.99
+    clat (usec): min=697, max=6082, avg=2470.57, stdev=251.29
+     lat (usec): min=717, max=6095, avg=2486.39, stdev=250.54
+    clat percentiles (usec):
+     |  1.00th=[ 2278],  5.00th=[ 2343], 10.00th=[ 2343], 20.00th=[ 2343],
+     | 30.00th=[ 2376], 40.00th=[ 2376], 50.00th=[ 2376], 60.00th=[ 2376],
+     | 70.00th=[ 2409], 80.00th=[ 2474], 90.00th=[ 2868], 95.00th=[ 2999],
+     | 99.00th=[ 3425], 99.50th=[ 3556], 99.90th=[ 3687], 99.95th=[ 5669],
+     | 99.99th=[ 5800]
+   bw (  MiB/s): min= 3130, max= 3258, per=100.00%, avg=3219.68, stdev=29.83, samples=19
+   iops        : min= 3130, max= 3258, avg=3219.68, stdev=29.83, samples=19
+  lat (usec)   : 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.13%, 4=99.78%, 10=0.08%
+  cpu          : usr=0.50%, sys=5.93%, ctx=32103, majf=0, minf=525
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=100.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.1%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=32172,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=8
+
+Run status group 0 (all jobs):
+   READ: bw=3216MiB/s (3372MB/s), 3216MiB/s-3216MiB/s (3372MB/s-3372MB/s), io=31.4GiB (33.7GB), run=10003-10003msec
+Running Sequential Read Q1T1 Test...
+seq_read_q1: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+seq_read_q1: Laying out IO file (1 file / 1024MiB)
+Jobs: 1 (f=1): [R(1)][100.0%][r=2100MiB/s][r=2100 IOPS][eta 00m:00s]
+seq_read_q1: (groupid=0, jobs=1): err= 0: pid=53: Sat Nov 30 12:26:19 2024
+  read: IOPS=2029, BW=2029MiB/s (2128MB/s)(19.8GiB/10001msec)
+    slat (usec): min=13, max=248, avg=21.57, stdev= 5.83
+    clat (usec): min=373, max=4111, avg=470.45, stdev=82.91
+     lat (usec): min=393, max=4137, avg=492.09, stdev=84.59
+    clat percentiles (usec):
+     |  1.00th=[  379],  5.00th=[  383], 10.00th=[  404], 20.00th=[  424],
+     | 30.00th=[  424], 40.00th=[  429], 50.00th=[  437], 60.00th=[  465],
+     | 70.00th=[  498], 80.00th=[  537], 90.00th=[  553], 95.00th=[  603],
+     | 99.00th=[  725], 99.50th=[  783], 99.90th=[  898], 99.95th=[  955],
+     | 99.99th=[ 2245]
+   bw (  MiB/s): min= 1752, max= 2192, per=99.93%, avg=2027.89, stdev=131.17, samples=19
+   iops        : min= 1752, max= 2192, avg=2027.89, stdev=131.17, samples=19
+  lat (usec)   : 500=70.29%, 750=28.95%, 1000=0.73%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=0.23%, sys=4.99%, ctx=20295, majf=0, minf=266
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=20295,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=2029MiB/s (2128MB/s), 2029MiB/s-2029MiB/s (2128MB/s-2128MB/s), io=19.8GiB (21.3GB), run=10001-10001msec
+Running Random 4K Q1T1 Test...
+rand_read_4k_q1: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+fio-3.28
+Starting 1 process
+rand_read_4k_q1: Laying out IO file (1 file / 1024MiB)
+Jobs: 1 (f=1): [r(1)][100.0%][r=40.6MiB/s][r=10.4k IOPS][eta 00m:00s]
+rand_read_4k_q1: (groupid=0, jobs=1): err= 0: pid=76: Sat Nov 30 12:26:31 2024
+  read: IOPS=10.2k, BW=39.7MiB/s (41.6MB/s)(397MiB/10001msec)
+    slat (usec): min=2, max=460, avg= 3.18, stdev= 3.49
+    clat (nsec): min=994, max=7603.1k, avg=94792.67, stdev=71338.84
+     lat (usec): min=82, max=7607, avg=98.02, stdev=71.68
+    clat percentiles (usec):
+     |  1.00th=[   82],  5.00th=[   82], 10.00th=[   82], 20.00th=[   84],
+     | 30.00th=[   84], 40.00th=[   85], 50.00th=[   86], 60.00th=[   89],
+     | 70.00th=[   90], 80.00th=[   94], 90.00th=[  112], 95.00th=[  135],
+     | 99.00th=[  215], 99.50th=[  251], 99.90th=[  400], 99.95th=[  465],
+     | 99.99th=[ 4686]
+   bw (  KiB/s): min=35304, max=42824, per=99.98%, avg=40609.26, stdev=1874.18, samples=19
+   iops        : min= 8826, max=10706, avg=10152.32, stdev=468.55, samples=19
+  lat (nsec)   : 1000=0.01%
+  lat (usec)   : 2=0.01%, 20=0.01%, 50=0.01%, 100=84.73%, 250=14.74%
+  lat (usec)   : 500=0.46%, 750=0.02%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.02%
+  cpu          : usr=0.85%, sys=5.37%, ctx=101544, majf=0, minf=13
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=101550,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=39.7MiB/s (41.6MB/s), 39.7MiB/s-39.7MiB/s (41.6MB/s-41.6MB/s), io=397MiB (416MB), run=10001-10001msec
