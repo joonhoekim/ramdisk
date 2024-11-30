@@ -1,0 +1,40 @@
+RAM Disk Benchmark Results (M1 Max 64GB)
+=========================
+Thu Nov 28 22:58:07 KST 2024
+
+exFAT - Cluster size: 4096 bytes
+1073741824 bytes transferred in 0.307262 secs (3494548053 bytes/sec)
+1073741824 bytes transferred in 0.189552 secs (5664629358 bytes/sec)
+1073741824 bytes transferred in 0.589807 secs (1820496915 bytes/sec)
+1073741824 bytes transferred in 2.555832 secs (420114399 bytes/sec)
+
+exFAT - Cluster size: 8192 bytes
+1073741824 bytes transferred in 0.310758 secs (3455234697 bytes/sec)
+1073741824 bytes transferred in 0.170649 secs (6292107331 bytes/sec)
+1073741824 bytes transferred in 0.598536 secs (1793946937 bytes/sec)
+1073741824 bytes transferred in 2.619841 secs (409849996 bytes/sec)
+
+exFAT - Cluster size: 16384 bytes
+1073741824 bytes transferred in 0.276072 secs (3889354313 bytes/sec)
+1073741824 bytes transferred in 0.170034 secs (6314865403 bytes/sec)
+1073741824 bytes transferred in 0.595097 secs (1804313959 bytes/sec)
+1073741824 bytes transferred in 2.560176 secs (419401566 bytes/sec)
+
+exFAT - Cluster size: 32768 bytes
+1073741824 bytes transferred in 0.282900 secs (3795481881 bytes/sec)
+1073741824 bytes transferred in 0.178526 secs (6014484299 bytes/sec)
+1073741824 bytes transferred in 0.594576 secs (1805894997 bytes/sec)
+1073741824 bytes transferred in 2.564226 secs (418739153 bytes/sec)
+
+exFAT - Cluster size: 65536 bytes
+1073741824 bytes transferred in 0.310957 secs (3453023486 bytes/sec)
+1073741824 bytes transferred in 0.167265 secs (6419405279 bytes/sec)
+1073741824 bytes transferred in 0.596927 secs (1798782471 bytes/sec)
+1073741824 bytes transferred in 2.580305 secs (416129808 bytes/sec)
+
+APFS Test
+1073741824 bytes transferred in 0.167155 secs (6423629709 bytes/sec)
+1073741824 bytes transferred in 0.158814 secs (6761002330 bytes/sec)
+1073741824 bytes transferred in 1.283727 secs (836425365 bytes/sec)
+1073741824 bytes transferred in 2.922017 secs (367465974 bytes/sec)
+
